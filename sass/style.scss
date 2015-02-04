@@ -1,0 +1,293 @@
+/*!
+* Theme Name:  Gabriel Amadeus
+* Theme URI:   gabrielamadeus.com
+* Description: Custom theme for Gabriel Amadeus Tiller
+* Author:      Jason Britton
+* Author URI:  velograph.net
+* Version:     0.1.0
+* Tags:
+* Text Domain: gabrielamadeus
+* Domain Path: /languages/
+*
+* License:     Commercial
+*/
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "base/base";
+
+@import "variables";
+@import "typography";
+@import "slick";
+
+
+body {
+	border: $fifteen solid $black;
+	border-top: 0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	.skip-link {
+		position: absolute;
+		text-indent: -9999px;
+	}
+	a {
+		color: $green-light;
+	}
+	img {
+		height: auto;
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+.contact-button {
+	background: $seafoam-dark;
+	color: $black;
+	display: inline-block;
+	font-weight: 700;
+	margin-bottom: $fifty;
+	padding: $fifteen $twentyfive;
+	text-transform: uppercase;
+}
+
+.header {
+	.navigation-container {
+		background: $black;
+		.navigation {
+			@include outer-container;
+			ul {
+				@include row();
+				li {
+					@include span-columns(3);
+					@include omega();
+					// background: $persimmon;
+					text-align: center;
+					a {
+						color: $white;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+					// &:first-of-type {
+					// 	background: $seafoam-dark;
+					// }
+					// &:last-of-type {
+					// 	background: $mustard;
+					// }
+				}
+			}
+		}
+	}
+	.logo-container {
+		@include outer-container;
+		position: relative;
+		.logo {
+			@include row();
+			a {
+				@include shift(8);
+				@include pad($fifteen);
+				@include span-columns(3);
+				padding-top: $twentyfive;
+				svg {
+					background: $white;
+					border: $twenty solid $white;
+				}
+			}
+		}
+	}
+}
+
+.lead-in {
+	@include row();
+	.lead-in-content {
+		@include span-columns(6);
+		@include shift(3);
+	}
+}
+
+.testimonials {
+	@include outer-container;
+	padding: $fifty 0;
+	.testimonial {
+		@include span-columns(10);
+		@include shift(1);
+		margin-bottom: $twentyfive;
+		p {
+			display: inline;
+			font-style: italic;
+		}
+		svg {
+			display: inline;
+			max-width: $twentyfive;
+		}
+		span.title {
+			display: block;
+		}
+	}
+}
+
+.skills-container {
+	padding: $fifty 0;
+	h1 {
+		background: $black;
+		color: $white;
+	}
+	.skill-row {
+		@include outer-container;
+		.skill {
+			@include span-columns(3);
+			@include pad($twentyfive);
+			color: $black;
+			.skill-title {
+				text-align: left;
+			}
+			p {
+				color: $black;
+				text-align: left;
+			}
+		}
+	}
+}
+
+.footer {
+	background: $black;
+	padding: $fifty 0;
+	section {
+		@include outer-container;
+		.social-media {
+			text-align: center;
+			a {
+				svg {
+					max-width: 25px;
+				}
+			}
+		}
+	}
+	.footer-nav {
+		ul {
+			li {
+				color: $white;
+				display: inline-block;
+				&:first-of-type {
+					.separator {
+						display: none;
+					}
+				}
+				a {
+					color: $seafoam;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
+
+.page-template-about {
+	.wp-post-image {
+		float: left;
+	}
+	.about-gabe {
+		color: $white;
+		background: $seafoam-dark;
+		padding: $fifty 0;
+	}
+}
+
+.experience-container {
+	background: $mustard;
+	padding: $fifty 0;
+	text-align: left;
+	.experience-row {
+		@include outer-container;
+		.experience{
+			@include span-columns(3);
+			h3 {
+				color: $persimmon;
+			}
+			&:last-of-type {
+				background: $persimmon;
+				color: $white;
+				padding: $fifteen;
+			}
+		}
+	}
+}
+
+.gallery {
+	@include row();
+	.slick-track {
+		.slick-slide {
+			margin: 0;
+		}
+	}
+}
+
+.case-study-list {
+	.case-study {
+		position: relative;
+		h2,
+		span.case-study-title {
+			color: $white;
+			text-shadow: 1px 1px 2px $black;
+		}
+		.case-study-title {
+			font-style: italic;
+		}
+		.case-study-title {
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			@include transform(translate(-50%,-50%));
+		}
+		.featured-image-container {
+			max-height: 600px;
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+			.hover-border {
+				@include transition( all .32s ease-in-out );
+				@include transform( translate(-50%,-50%) );
+				border: $twentyfive solid;
+				opacity: 0;
+				height: 110%;
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				width: 110%;
+			}
+			&:hover {
+				.hover-border {
+					height: 100%;
+					opacity: 1;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.box {
+	background: #529db5;
+}
+
+.single {
+	.case-study {
+		.slick-track {
+			height: 600px;
+		}
+		.post-categories {
+			display: inline-block;
+		}
+	}
+}
+
+.page-template-about,
+.single {
+	.header {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+}

@@ -1,0 +1,54 @@
+$fira-sans: 'fira-sans', Helvetica, Verdana, sans-serif;
+
+body {
+	font-family: $fira-sans;
+}
+
+h1 {
+	font: {
+		size: 60px;
+		weight: 700;
+	}
+	text: {
+		transform: uppercase;
+	}
+}
+
+h2 {
+	font: {
+		size: 36px;
+		weight: 700;
+	}
+	text: {
+		transform: uppercase;
+	}
+}
+
+h3 {
+	font: {
+		size: 18px;
+		weight: 700;
+	}
+	a {
+		color: $black;
+	}
+}
+
+h4 {
+	font: {
+		family: $fira-sans;
+		size: 25px;
+		weight: 700;
+	}
+	text: {
+		transform: uppercase;
+	}
+}
+
+p, li {
+	font: {
+		size: 20px;
+		weight: 400;
+	}
+	line-height: 30px;
+}

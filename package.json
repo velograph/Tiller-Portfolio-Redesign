@@ -1,0 +1,29 @@
+{
+  "name": "gabriel-amadeus",
+  "title": "Gabriel Amadeus",
+  "description": "Custom theme for Gabriel Amadeus Tiller",
+  "version": "0.1.0",
+  "homepage": "gabrielamadeus.com",
+  "author": {
+    "name": "Jason Britton",
+    "email": "velograph@gmail.com",
+    "url": "velograph.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:needmore/scratch.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.6.0",
+    "grunt-contrib-imagemin": "~0.5.0",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-sass": "^0.17.0",
+    "jpegtran-bin": "0.2.0",
+    "matchdep": "~0.1.2"
+  },
+  "keywords": []
+}
