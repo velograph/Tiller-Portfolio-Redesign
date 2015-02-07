@@ -67,7 +67,6 @@ body {
 				li {
 					@include span-columns(3);
 					@include omega();
-					// background: $persimmon;
 					text-align: center;
 					a {
 						color: $white;
@@ -86,7 +85,7 @@ body {
 			@include row();
 			a {
 				@include shift(8);
-				@include pad($fifteen);
+				@include pad( $fifteen );
 				@include span-columns(3);
 				padding-top: $twentyfive;
 				svg {
