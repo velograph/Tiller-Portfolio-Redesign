@@ -2,7 +2,7 @@ node_modules
 .sass-cache
 .ftppass
 js/main.min.js
-js/main.min.js.map
+js/main.js.map
 css/style.css
 css/style.css.map
 sftpCache.json
