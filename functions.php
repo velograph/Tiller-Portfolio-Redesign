@@ -92,7 +92,7 @@ function grabrielamadeus_scripts() {
 
 	wp_enqueue_script( 'grabrielamadeus-navigation', get_template_directory_uri() . '/js/navigation.js', false, filemtime( get_stylesheet_directory().'/js/navigation.js' ), true );
 
-	wp_enqueue_script( 'grabrielamadeus-slick', get_template_directory_uri() . '/js/slick.min.js', false, filemtime( get_stylesheet_directory().'/js/slick.min.js' ), true );
+	wp_enqueue_script( 'grabrielamadeus-slick', get_template_directory_uri() . '/js/slick.js', false, filemtime( get_stylesheet_directory().'/js/slick.js' ), true );
 
 	wp_enqueue_script( 'grabrielamadeus-siteScripts', get_template_directory_uri() . '/js/site_scripts.js', false, filemtime( get_stylesheet_directory().'/js/site_scripts.js' ), true );
 
