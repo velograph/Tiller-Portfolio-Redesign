@@ -157,7 +157,7 @@
 			<?php wp_nav_menu(
 				array(
 					'theme_location' => 'primary',
-					'before' => '<span class="separator">| </span>',
+					'before' => '<span class="separator">&nbsp;|&nbsp;&nbsp;</span>',
 				)
 			); ?>
 		</section>

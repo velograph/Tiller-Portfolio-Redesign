@@ -21,8 +21,10 @@ get_header(); ?>
 
 				<h1><?php the_field('case_study_title', 25); ?></h1>
 
-				<?php $the_content = apply_filters('the_content', get_post(25)->post_content); ?>
-				<?php echo $the_content; ?>
+				<div class="the-content">
+					<?php $the_content = apply_filters('the_content', get_post(25)->post_content); ?>
+					<?php echo $the_content; ?>
+				</div>
 
 				<h3><a href="/contact">Let's Chat!</a></h3>
 

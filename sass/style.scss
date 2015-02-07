@@ -13,6 +13,7 @@
 */
 
 @import "bourbon/bourbon";
+@import "base/grid-settings";
 @import "neat/neat";
 @import "base/base";
 
@@ -46,7 +47,10 @@ body {
 	background: $seafoam-dark;
 	color: $black;
 	display: inline-block;
-	font-weight: 700;
+	font: {
+		family: $plutoBold;
+		size: 25px;
+	}
 	margin-bottom: $fifty;
 	padding: $fifteen $twentyfive;
 	text-transform: uppercase;
@@ -55,18 +59,28 @@ body {
 .header {
 	background: {
 		color: $white;
-		image: url(../images/pattern.svg);
 		repeat: repeat;
+	}
+	@include media( $large-screen ) {
+		background: {
+			image: url(../images/pattern.svg);
+		}
 	}
 	.navigation-container {
 		background: $black;
+		padding: $ten;
+		@include media( $large-screen ) {
+			padding: 0;
+		}
 		.navigation {
 			@include outer-container;
 			ul {
 				@include row();
 				li {
-					@include span-columns(3);
-					@include omega();
+					@include media( $large-screen ) {
+						@include span-columns(3);
+						@include omega();
+					}
 					text-align: center;
 					a {
 						color: $white;
@@ -84,9 +98,11 @@ body {
 		.logo {
 			@include row();
 			a {
-				@include shift(8);
-				@include pad($fifteen);
-				@include span-columns(3);
+				@include media( $large-screen ) {
+					@include span-columns(3);
+					@include shift(8);
+					@include pad($fifteen);
+				}
 				padding-top: $twentyfive;
 				svg {
 					background: $white;
@@ -100,9 +116,12 @@ body {
 .lead-in {
 	@include row();
 	.lead-in-content {
-		margin: ($fifty * 2) 0 ($fifty);
-		@include span-columns(6);
-		@include shift(3);
+		@include pad($twentyfive);
+		@include media( $large-screen ) {
+			@include span-columns(6);
+			@include shift(3);
+			margin: ($fifty * 2) 0 ($fifty);
+		}
 		h3 {
 			a {
 				color: $black;
@@ -113,15 +132,31 @@ body {
 				color: $seafoam-light;
 			}
 		}
+		.the-content {
+			@include row();
+			margin-bottom: $fifteen;
+			p {
+				text-align: left;
+				@include media( $large-screen ) {
+					text-align: center;
+				}
+			}
+		}
 	}
 }
 
 .testimonials {
 	@include outer-container;
-	padding: $fifty 0;
+	padding-top: $twentyfive;
+	@include media( $large-screen ) {
+		padding: $fifty 0;
+	}
 	.testimonial {
-		@include span-columns(10);
-		@include shift(1);
+		@include pad($twentyfive);
+		@include media( $large-screen ) {
+			@include span-columns(10);
+			@include shift(1);
+		}
 		margin-bottom: $twentyfive;
 		p {
 			display: inline;
@@ -138,22 +173,31 @@ body {
 }
 
 .skills-container {
-	padding: $fifty 0;
+	@include media( $large-screen ) {
+		padding: $fifty 0;
+	}
 	h1 {
 		background: $black;
 		color: $white;
+		padding: $fifty 0;
 	}
 	.skill-row {
 		@include outer-container;
 		.skill {
-			@include span-columns(3);
 			@include pad($twentyfive);
+			@include media( $large-screen ) {
+				@include span-columns(3);
+			}
 			color: $black;
 			.skill-title {
 				text-align: left;
 			}
+			img {
+				max-width: 50%;
+			}
 			p {
 				color: $black;
+				font-size: 18px;
 				text-align: left;
 			}
 		}
@@ -166,10 +210,12 @@ body {
 	section {
 		@include outer-container;
 		.social-media {
+			margin-bottom: $ten;
 			text-align: center;
 			a {
+				padding: 0 $ten;
 				svg {
-					max-width: 25px;
+					max-width: 40px;
 				}
 			}
 		}
@@ -186,6 +232,10 @@ body {
 				}
 				a {
 					color: $seafoam;
+					font: {
+						family: $plutoBold;
+						size: 14px;
+					}
 					text-transform: uppercase;
 				}
 			}
@@ -254,6 +304,9 @@ body {
 			overflow: hidden;
 			position: relative;
 			width: 100%;
+			img {
+				float: left;
+			}
 			.hover-border {
 				@include transition( all .32s ease-in-out );
 				@include transform( translate(-50%,-50%) );
