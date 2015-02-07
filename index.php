@@ -58,6 +58,7 @@ get_header(); ?>
 								</div>
 
 								<div class="hover-border" style="border-color:<?php the_field('border_color'); ?>"></div>
+								
 								<?php $small_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-mobile' ); ?>
 								<?php $medium_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-tablet' ); ?>
 								<?php $large_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-desktop' ); ?>
