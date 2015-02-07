@@ -1,0 +1,24 @@
+/* 1.  Font Families
+================================================== */
+
+/* Pluto Italic */
+@font-face {
+font-family: 'plutoLight';
+src: url('../fonts/pluto_cond_ex_light.eot');
+src: url('../fonts/pluto_cond_ex_light.eot?#iefix') format('embedded-opentype'),
+url('../fonts/pluto_cond_ex_light.woff') format('woff'),
+url('../fonts/pluto_cond_ex_light.woff2') format('woff2'),
+url('../fonts/pluto_cond_ex_light.ttf') format('truetype'),
+url('../fonts/pluto_cond_ex_light.svg#webfont') format('svg');
+}
+
+/* Pluto Bold */
+@font-face {
+font-family: 'plutoBold';
+src: url('../fonts/pluto_bold.eot');
+src: url('../fonts/pluto_bold.eot?#iefix') format('embedded-opentype'),
+url('../fonts/pluto_bold.woff') format('woff'),
+url('../fonts/pluto_bold.woff2') format('woff2'),
+url('../fonts/pluto_bold.ttf') format('truetype'),
+url('../fonts/pluto_bold.svg#webfont') format('svg');
+}
