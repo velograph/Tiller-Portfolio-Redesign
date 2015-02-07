@@ -507,63 +507,67 @@ body {
   padding: 15px 25px;
   text-transform: uppercase; }
 
-.header .navigation-container {
-  background: #000; }
-  .header .navigation-container .navigation {
-    max-width: 68em;
-    margin-left: auto;
-    margin-right: auto; }
-    .header .navigation-container .navigation::after {
-      clear: both;
-      content: "";
-      display: table; }
-    .header .navigation-container .navigation ul {
-      display: block; }
-      .header .navigation-container .navigation ul::after {
+.header {
+  background-color: #fff;
+  background-image: url(../images/pattern.svg);
+  background-repeat: repeat; }
+  .header .navigation-container {
+    background: #000; }
+    .header .navigation-container .navigation {
+      max-width: 68em;
+      margin-left: auto;
+      margin-right: auto; }
+      .header .navigation-container .navigation::after {
         clear: both;
         content: "";
         display: table; }
-      .header .navigation-container .navigation ul li {
+      .header .navigation-container .navigation ul {
+        display: block; }
+        .header .navigation-container .navigation ul::after {
+          clear: both;
+          content: "";
+          display: table; }
+        .header .navigation-container .navigation ul li {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 23.23176%;
+          margin-right: 0;
+          text-align: center; }
+          .header .navigation-container .navigation ul li:last-child {
+            margin-right: 0; }
+          .header .navigation-container .navigation ul li a {
+            color: #fff; }
+            .header .navigation-container .navigation ul li a:hover {
+              text-decoration: underline; }
+  .header .logo-container {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; }
+    .header .logo-container::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .header .logo-container .logo {
+      display: block; }
+      .header .logo-container .logo::after {
+        clear: both;
+        content: "";
+        display: table; }
+      .header .logo-container .logo a {
+        margin-left: 68.23843%;
+        padding: 15px;
         float: left;
         display: block;
         margin-right: 2.35765%;
         width: 23.23176%;
-        margin-right: 0;
-        text-align: center; }
-        .header .navigation-container .navigation ul li:last-child {
+        padding-top: 25px; }
+        .header .logo-container .logo a:last-child {
           margin-right: 0; }
-        .header .navigation-container .navigation ul li a {
-          color: #fff; }
-          .header .navigation-container .navigation ul li a:hover {
-            text-decoration: underline; }
-.header .logo-container {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative; }
-  .header .logo-container::after {
-    clear: both;
-    content: "";
-    display: table; }
-  .header .logo-container .logo {
-    display: block; }
-    .header .logo-container .logo::after {
-      clear: both;
-      content: "";
-      display: table; }
-    .header .logo-container .logo a {
-      margin-left: 68.23843%;
-      padding: 15px;
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 23.23176%;
-      padding-top: 25px; }
-      .header .logo-container .logo a:last-child {
-        margin-right: 0; }
-      .header .logo-container .logo a svg {
-        background: #fff;
-        border: 20px solid #fff; }
+        .header .logo-container .logo a svg {
+          background: #fff;
+          border: 20px solid #fff; }
 
 .lead-in {
   display: block; }
@@ -747,14 +751,21 @@ body {
 .box {
   background: #529db5; }
 
-.single .case-study .slick-track {
-  height: 600px; }
-.single .case-study .post-categories {
-  display: inline-block; }
+.single header.header {
+  background-image: none; }
+.single .case-study {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .single .case-study::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .single .case-study .post-categories {
+    display: inline-block; }
 
 .page-template-about .header,
 .single .header {
-  position: absolute;
   top: 0;
   width: 100%;
   z-index: 1; }

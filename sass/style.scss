@@ -52,6 +52,11 @@ body {
 }
 
 .header {
+	background: {
+		color: $white;
+		image: url(../images/pattern.svg);
+		repeat: repeat;
+	}
 	.navigation-container {
 		background: $black;
 		.navigation {
@@ -69,12 +74,6 @@ body {
 							text-decoration: underline;
 						}
 					}
-					// &:first-of-type {
-					// 	background: $seafoam-dark;
-					// }
-					// &:last-of-type {
-					// 	background: $mustard;
-					// }
 				}
 			}
 		}
@@ -272,9 +271,12 @@ body {
 }
 
 .single {
+	header.header {
+		background-image: none;
+	}
 	.case-study {
+		@include outer-container;
 		.slick-track {
-			height: 600px;
 		}
 		.post-categories {
 			display: inline-block;
@@ -285,7 +287,6 @@ body {
 .page-template-about,
 .single {
 	.header {
-		position: absolute;
 		top: 0;
 		width: 100%;
 		z-index: 1;
