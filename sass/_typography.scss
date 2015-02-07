@@ -21,11 +21,16 @@ h1 {
 h2 {
 	font: {
 		family: $plutoBold;
-		size: 36px;
+		size: 24px;
 		weight: 400;
 	}
 	text: {
 		transform: uppercase;
+	}
+	@include media( $large-screen ) {
+		font: {
+			size: 36px;
+		}
 	}
 }
 

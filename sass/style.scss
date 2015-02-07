@@ -120,7 +120,7 @@ body {
 		@include media( $large-screen ) {
 			@include span-columns(6);
 			@include shift(3);
-			margin: ($fifty * 2) 0 ($fifty);
+			padding: ($fifty * 2) 0 ($fifty);
 		}
 		h3 {
 			a {
@@ -308,7 +308,7 @@ body {
 				float: left;
 			}
 			.hover-border {
-				@include transition( all .32s ease-in-out );
+				@include transition( opacity .32s ease-in-out );
 				@include transform( translate(-50%,-50%) );
 				border: $twentyfive solid;
 				opacity: 0;
@@ -321,6 +321,9 @@ body {
 
 		}
 		&:hover {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
 			.hover-border {
 				height: 100%;
 				opacity: 1;
