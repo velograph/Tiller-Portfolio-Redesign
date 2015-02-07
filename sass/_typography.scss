@@ -1,14 +1,17 @@
-$pluto-light: 'plutoLight', Helvetica, Verdana, sans-serif;
+$plutoLight: 'plutoLight', Helvetica, Verdana, sans-serif;
+$plutoBold: 'plutoBold', Helvetica, Verdana, sans-serif;
 
 body {
-	font-family: $pluto-light;
+	font-family: $plutoLight;
 }
 
 h1 {
 	font: {
+		family: $plutoBold;
 		size: 60px;
-		weight: 700;
 	}
+	letter-spacing: $five;
+	margin-bottom: $twentyfive;
 	text: {
 		transform: uppercase;
 	}
@@ -16,8 +19,8 @@ h1 {
 
 h2 {
 	font: {
+		family: $plutoBold;
 		size: 36px;
-		weight: 700;
 	}
 	text: {
 		transform: uppercase;
@@ -26,20 +29,18 @@ h2 {
 
 h3 {
 	font: {
+		family: $plutoBold;
 		size: 18px;
-		weight: 700;
 	}
-	a {
-		color: $black;
-	}
+	margin-bottom: $ten;
 }
 
 h4 {
 	font: {
-		family: $pluto-light;
+		family: $plutoBold;
 		size: 25px;
-		weight: 700;
 	}
+	margin-bottom: $five;
 	text: {
 		transform: uppercase;
 	}
@@ -47,8 +48,9 @@ h4 {
 
 p, li {
 	font: {
+		family: $plutoLight;
 		size: 20px;
-		weight: 400;
 	}
+	letter-spacing: 2px;
 	line-height: 30px;
 }

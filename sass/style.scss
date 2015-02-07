@@ -67,7 +67,6 @@ body {
 				li {
 					@include span-columns(3);
 					@include omega();
-					// background: $persimmon;
 					text-align: center;
 					a {
 						color: $white;
@@ -101,8 +100,19 @@ body {
 .lead-in {
 	@include row();
 	.lead-in-content {
+		margin: ($fifty * 2) 0 ($fifty);
 		@include span-columns(6);
 		@include shift(3);
+		h3 {
+			a {
+				color: $black;
+			}
+		}
+		h4 {
+			a {
+				color: $seafoam-light;
+			}
+		}
 	}
 }
 
@@ -227,18 +237,17 @@ body {
 	.case-study {
 		position: relative;
 		h2,
-		span.case-study-title {
+		span {
 			color: $white;
 			text-shadow: 1px 1px 2px $black;
 		}
 		.case-study-title {
-			font-style: italic;
-		}
-		.case-study-title {
+			color: $white;
 			left: 50%;
 			position: absolute;
 			top: 50%;
-			@include transform(translate(-50%,-50%));
+			@include transform( translate(-50%,-50%) );
+			z-index: 1;
 		}
 		.featured-image-container {
 			max-height: 600px;
@@ -250,18 +259,19 @@ body {
 				@include transform( translate(-50%,-50%) );
 				border: $twentyfive solid;
 				opacity: 0;
-				height: 110%;
+				height: 100%;
 				left: 50%;
 				position: absolute;
 				top: 50%;
-				width: 110%;
+				width: 100%;
 			}
-			&:hover {
-				.hover-border {
-					height: 100%;
-					opacity: 1;
-					width: 100%;
-				}
+
+		}
+		&:hover {
+			.hover-border {
+				height: 100%;
+				opacity: 1;
+				width: 100%;
 			}
 		}
 	}
