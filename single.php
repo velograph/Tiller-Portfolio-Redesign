@@ -1,9 +1,9 @@
 <?php
 /**
- * The template for displaying all single posts.
- *
- * @package Gabriel Amadeus
- */
+* The template for displaying all single posts.
+*
+* @package Gabriel Amadeus
+*/
 
 get_header(); ?>
 
@@ -26,13 +26,21 @@ get_header(); ?>
 
 			<article class="case-study">
 
-				<?php the_field('gallery'); ?>
+				<div class="gallery">
 
-				&mdash;&nbsp;<?php the_category(); ?>&nbsp;&mdash;
+					<?php the_field('gallery'); ?>
 
-				<h4><?php the_title(); ?></h4>
+				</div>
 
-				<?php the_field('case_study_content'); ?>
+				<div class="case-study-content">
+
+					&mdash;&nbsp;<?php the_category(); ?>&nbsp;&mdash;
+
+					<h4><?php the_title(); ?></h4>
+
+					<?php the_field('case_study_content'); ?>
+
+				</div>
 
 			</article>
 

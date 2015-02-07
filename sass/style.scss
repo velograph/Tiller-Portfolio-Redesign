@@ -67,6 +67,7 @@ body {
 				li {
 					@include span-columns(3);
 					@include omega();
+					// background: $persimmon;
 					text-align: center;
 					a {
 						color: $white;
@@ -85,7 +86,7 @@ body {
 			@include row();
 			a {
 				@include shift(8);
-				@include pad( $fifteen );
+				@include pad($fifteen);
 				@include span-columns(3);
 				padding-top: $twentyfive;
 				svg {
@@ -276,7 +277,12 @@ body {
 	}
 	.case-study {
 		@include outer-container;
-		.slick-track {
+		.gallery {
+			@include span-columns(12);
+		}
+		.case-study-content {
+			@include span-columns(8);
+			@include shift(2);
 		}
 		.post-categories {
 			display: inline-block;
