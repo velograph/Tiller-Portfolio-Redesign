@@ -24,9 +24,11 @@
 
 		</div>
 
-		<div class="logo-container">
+	</header><!-- #masthead -->
 
-			<div class="logo">
+	<div class="logo-container">
+
+		<div class="logo">
 
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -286,6 +288,6 @@
 
 	</div><!-- .logo-container -->
 
-	</header><!-- #masthead -->
+	<div class="pattern"></div>
 
 	<div id="content" class="site-content">

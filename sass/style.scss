@@ -28,6 +28,7 @@ body {
 	border-top: 0;
 	margin: 0;
 	padding: 0;
+	position: relative;
 	text-align: center;
 	.skip-link {
 		position: absolute;
@@ -92,24 +93,53 @@ body {
 			}
 		}
 	}
-	.logo-container {
-		@include outer-container;
+}
+
+.logo-container {
+	z-index: 1;
+	.logo {
+		a {
+			svg {
+				background: $white;
+				border: $twenty solid $white;
+				max-width: 250px;
+			}
+		}
+	}
+}
+.sticky-wrapper {
+	@include media( $large-screen ) {
 		position: relative;
-		.logo {
-			@include row();
-			a {
-				@include media( $large-screen ) {
-					@include span-columns(3);
-					@include shift(8);
-					@include pad($fifteen);
-				}
-				padding-top: $twentyfive;
-				svg {
-					background: $white;
-					border: $twenty solid $white;
+		top: $twentyfive;
+		.logo-container {
+			position: relative;
+			width: 1280px;
+			.logo {
+				position: absolute;
+				right: 150px;
+				width: 250px;
+				a {
+					padding-top: $twentyfive;
 				}
 			}
 		}
+		&.is-sticky {
+			.logo-container {
+				width: 1280px !important;
+			}
+		}
+	}
+}
+
+.pattern {
+	background: {
+		image: url(../images/pattern.svg);
+		size: 50px 50px;
+	}
+	height: 50px;
+	@include media( $large-screen ) {
+		height: 100px;
+		margin-bottom: 100px;
 	}
 }
 
@@ -274,15 +304,6 @@ body {
 	}
 }
 
-.gallery {
-	@include row();
-	.slick-track {
-		.slick-slide {
-			margin: 0;
-		}
-	}
-}
-
 .case-study-list {
 	.case-study {
 		position: relative;
@@ -338,9 +359,6 @@ body {
 }
 
 .single {
-	header.header {
-		background-image: none;
-	}
 	.case-study {
 		@include outer-container;
 		.gallery {
@@ -353,14 +371,5 @@ body {
 		.post-categories {
 			display: inline-block;
 		}
-	}
-}
-
-.page-template-about,
-.single {
-	.header {
-		top: 0;
-		width: 100%;
-		z-index: 1;
 	}
 }
