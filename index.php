@@ -46,7 +46,7 @@ get_header(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<div class="case-study">
+					<div class="lazyload case-study">
 
 						<a href="<?php the_permalink(); ?>">
 

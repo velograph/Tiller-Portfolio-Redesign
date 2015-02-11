@@ -22,6 +22,14 @@
 @import "typography";
 @import "slick";
 
+.lazyload,
+.lazyloading {
+	opacity: 0;
+}
+.lazyloaded {
+	opacity: 1;
+	transition: opacity .3s ease-in;
+}
 
 body {
 	border: $fifteen solid $black;
