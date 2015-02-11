@@ -70,7 +70,7 @@ module.exports = function( grunt ) {
     },
     watch: {
       sass: {
-        files: ['sass/*.{scss,sass}', 'sass/**/*.scss'],
+        files: ['sass/*.{scss,sass}', 'sass/**/*.scss', 'neat/**/*.scss', 'bourbon/**/*.scss', 'base/**/*.scss'],
         tasks: ['sass', 'uglify'],
       },
       js: {
@@ -115,6 +115,6 @@ module.exports = function( grunt ) {
   grunt.registerTask('build', ['sass', 'cssmin', 'uglify']);
   grunt.registerTask('stage', ['build', 'imagemin']);
   grunt.loadNpmTasks('grunt-contrib-sass');
-  
+
   grunt.util.linefeed = '\n';
 }
