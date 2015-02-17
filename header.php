@@ -14,6 +14,8 @@
 
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'Gabriel Amadeus' ); ?></a>
 
+	<!-- <div class="top-border"></div> -->
+
 	<header class="header" role="banner">
 
 		<div class="navigation-container">

@@ -65,11 +65,19 @@ body {
 	text-transform: uppercase;
 }
 
+// .top-border {
+// 	background: $black;
+// 	height: 25px;
+// 	position: fixed;
+// }
+
 .header {
 	background: {
 		color: $white;
 		repeat: repeat;
 	}
+	position: fixed;
+	width: 100%;
 	@include media( $large-screen ) {
 		background: {
 			image: url(../images/pattern.svg);
@@ -93,6 +101,10 @@ body {
 					text-align: center;
 					a {
 						color: $white;
+						font: {
+							family: $plutoBold;
+						}
+						text-transform: uppercase;
 						&:hover {
 							text-decoration: underline;
 						}
@@ -118,7 +130,7 @@ body {
 .sticky-wrapper {
 	@include media( $large-screen ) {
 		position: relative;
-		top: $twentyfive;
+		top: $fifty;
 		.logo-container {
 			position: relative;
 			width: 1280px;
@@ -283,12 +295,28 @@ body {
 
 .page-template-about {
 	.wp-post-image {
-		float: left;
+		@include row();
+		img {
+			float: left;
+		}
 	}
 	.about-gabe {
+		@include row();
 		color: $white;
 		background: $seafoam-dark;
 		padding: $fifty 0;
+		.entry-content {
+			@include media( $medium-screen ) {
+				@include span-columns(8);
+				@include shift(2);
+				a {
+					color: $white;
+					&:hover {
+						color: $seafoam;
+					}
+				}
+			}
+		}
 	}
 }
 

@@ -13,6 +13,21 @@
 
 get_header(); ?>
 
+<script>
+$(function() {
+	$('a[href*=#]:not([href=#])').click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+						target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+						if (target.length) {
+								$('html,body').animate({ scrollTop: target.offset().top -0 }, 1500);
+				return false;
+				}
+			}
+			});
+		});
+</script>
+
 	<div id="primary" class="content-area">
 
 		<article class="lead-in">
@@ -28,7 +43,7 @@ get_header(); ?>
 
 				<h3><a href="/contact">Let's Chat!</a></h3>
 
-				<h4><a href="#">See Work</a></h4>
+				<h4><a class="jump-to-content" href="#case-study-list">See Work</a></h4>
 
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					width="30px" height="13.084px" viewBox="0 0 30 13.084" enable-background="new 0 0 30 13.084" xml:space="preserve">
@@ -42,7 +57,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<section class="case-study-list">
+			<section id="case-study-list" class="case-study-list">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -58,7 +73,7 @@ get_header(); ?>
 								</div>
 
 								<div class="hover-border" style="border-color:<?php the_field('border_color'); ?>"></div>
-								
+
 								<?php $small_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-mobile' ); ?>
 								<?php $medium_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-tablet' ); ?>
 								<?php $large_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-desktop' ); ?>

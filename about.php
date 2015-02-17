@@ -19,9 +19,13 @@ get_header(); ?>
 			<?php the_post_thumbnail(); ?>
 
 			<article class="about-gabe">
-				<h4>&mdash;&nbsp;Who?&nbsp;&mdash;</h4>
-				<h1>Hi.</h1>
-				<?php the_content(); ?>
+
+				<div class="entry-content">
+					<h4>&mdash;&nbsp;Who?&nbsp;&mdash;</h4>
+					<h1>Hi.</h1>
+					<?php the_content(); ?>
+				</div>
+				
 			</article>
 
 			<section class="experience-container">
