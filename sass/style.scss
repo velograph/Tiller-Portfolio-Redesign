@@ -54,6 +54,7 @@ body {
 
 .contact-button {
 	background: $seafoam-dark;
+	border: none;
 	color: $black;
 	display: inline-block;
 	font: {
@@ -63,25 +64,23 @@ body {
 	margin-bottom: $fifty;
 	padding: $fifteen $twentyfive;
 	text-transform: uppercase;
+	&:hover {
+		color: $white;
+	}
 }
-
-// .top-border {
-// 	background: $black;
-// 	height: 25px;
-// 	position: fixed;
-// }
 
 .header {
 	background: {
 		color: $white;
 		repeat: repeat;
 	}
-	position: fixed;
 	width: 100%;
+	z-index: 1;
 	@include media( $large-screen ) {
 		background: {
 			image: url(../images/pattern.svg);
 		}
+		position: fixed;
 	}
 	.navigation-container {
 		background: $black;
@@ -103,6 +102,13 @@ body {
 						color: $white;
 						font: {
 							family: $plutoBold;
+							size: 14px;
+						}
+						@include media( $medium-screen ) {
+							font: {
+								family: $plutoBold;
+								size: 16px;
+							}
 						}
 						text-transform: uppercase;
 						&:hover {
@@ -116,27 +122,26 @@ body {
 }
 
 .logo-container {
-	z-index: 1;
+	z-index: 9;
 	.logo {
 		a {
 			svg {
-				background: $white;
-				border: $twenty solid $white;
+				height: 145px;
 				max-width: 250px;
 			}
 		}
 	}
 }
 .sticky-wrapper {
-	@include media( $large-screen ) {
+	@include media( $medium-screen ) {
 		position: relative;
 		top: $fifty;
 		.logo-container {
 			position: relative;
 			width: 1280px;
 			.logo {
+				left: -1px;
 				position: absolute;
-				right: 150px;
 				width: 250px;
 				a {
 					padding-top: $twentyfive;
@@ -151,15 +156,25 @@ body {
 	}
 }
 
-.pattern {
+@include media( $large-screen ) {
+	.pattern {
+		background: {
+			image: url(../images/pattern.svg);
+			size: 50px 50px;
+		}
+		height: 100px;
+		margin-bottom: 100px;
+	}
+}
+
+.footer_pattern {
 	background: {
 		image: url(../images/pattern.svg);
 		size: 50px 50px;
 	}
-	height: 50px;
+	height: 30px;
 	@include media( $large-screen ) {
-		height: 100px;
-		margin-bottom: 100px;
+		height: 30px;
 	}
 }
 
@@ -223,6 +238,7 @@ body {
 }
 
 .skills-container {
+	@include outer-container;
 	@include media( $large-screen ) {
 		padding: $fifty 0;
 	}
@@ -232,7 +248,7 @@ body {
 		padding: $fifty 0;
 	}
 	.skill-row {
-		@include outer-container;
+		@include row();
 		.skill {
 			@include pad($twentyfive);
 			@include media( $large-screen ) {
@@ -243,7 +259,10 @@ body {
 				text-align: left;
 			}
 			img {
-				max-width: 50%;
+				max-width: 25%;
+				@include media( $large-screen ) {
+					max-width: 50%;
+				}
 			}
 			p {
 				color: $black;
@@ -322,19 +341,31 @@ body {
 
 .experience-container {
 	background: $mustard;
-	padding: $fifty 0;
+	padding: $fifty 0 0;
+	@include media( $large-screen ) {
+		padding: $fifty 0;
+	}
 	text-align: left;
-	.experience-row {
+	.experience-inner-container {
 		@include outer-container;
-		.experience{
-			@include span-columns(3);
-			h3 {
-				color: $persimmon;
-			}
-			&:last-of-type {
-				background: $persimmon;
-				color: $white;
-				padding: $fifteen;
+		.experience-row {
+			@include row();
+			.experience{
+				@include pad($fifty);
+				@include media( $large-screen ) {
+					@include span-columns(3);
+				}
+				h3 {
+					color: $persimmon;
+				}
+				ul {
+					margin-bottom: .75em;
+				}
+				&:last-of-type {
+					background: $persimmon;
+					color: $white;
+					padding: $fifteen;
+				}
 			}
 		}
 	}
@@ -397,8 +428,20 @@ body {
 .single {
 	.case-study {
 		@include outer-container;
+		margin-bottom: 0;
+		@include media( $medium-screen ) {
+			margin-bottom: $twentyfive;
+		}
 		.gallery {
 			@include span-columns(12);
+			margin-bottom: $twentyfive;
+			.slick-prev,
+			.slick-next {
+				width: $fifteen;
+				@include media( $large-screen ) {
+					width: $twenty;
+				}
+			}
 		}
 		.case-study-content {
 			@include span-columns(8);

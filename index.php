@@ -41,7 +41,7 @@ $(function() {
 					<?php echo $the_content; ?>
 				</div>
 
-				<h3><a href="/contact">Let's Chat!</a></h3>
+				<h3><a href="mailto:gabrielamadeus@gmail.com">Let's Chat!</a></h3>
 
 				<h4><a class="jump-to-content" href="#case-study-list">See Work</a></h4>
 

@@ -25,52 +25,54 @@ get_header(); ?>
 					<h1>Hi.</h1>
 					<?php the_content(); ?>
 				</div>
-				
+
 			</article>
 
 			<section class="experience-container">
 
-				<div class="experience-row">
+				<div class="experience-inner-container">
 
-					<div class="experience">
+					<div class="experience-row">
 
-						<h3><?php the_field('first_position_title'); ?>
-						<?php the_field('first_position_company'); ?>
-						<?php the_field('first_position_date'); ?></h3>
+						<div class="experience">
 
-						<?php the_field('first_position_summary'); ?>
+							<h3><?php the_field('first_position_title'); ?>
+							<?php the_field('first_position_company'); ?>
+							<?php the_field('first_position_date'); ?></h3>
 
-					</div>
+							<?php the_field('first_position_summary'); ?>
 
-					<div class="experience">
+						</div>
 
-						<h3><?php the_field('second_position_title'); ?>
-						<?php the_field('second_position_company'); ?>
-						<?php the_field('second_position_date'); ?></h3>
+						<div class="experience">
 
-						<?php the_field('second_position_summary'); ?>
+							<h3><?php the_field('second_position_title'); ?>
+							<?php the_field('second_position_company'); ?>
+							<?php the_field('second_position_date'); ?></h3>
 
-					</div>
+							<?php the_field('second_position_summary'); ?>
 
-					<div class="experience">
+						</div>
 
-						<h3><?php the_field('third_position_title'); ?>
-						<?php the_field('third_position_company'); ?>
-						<?php the_field('third_position_date'); ?></h3>
+						<div class="experience">
 
-						<?php the_field('third_position_summary'); ?>
+							<h3><?php the_field('third_position_title'); ?>
+							<?php the_field('third_position_company'); ?>
+							<?php the_field('third_position_date'); ?></h3>
 
-					</div>
+							<?php the_field('third_position_summary'); ?>
 
-					<div class="experience">
-						<h4>Technical Skills</h4>
-						<?php the_field('technical_skills'); ?>
+						</div>
 
-						<h4>Education</h4>
-						<?php the_field('education'); ?>
+						<div class="experience">
 
-						<h4>Interests</h4>
-						<?php the_field('interests'); ?>
+							<?php the_field('technical_skills'); ?>
+
+							<?php the_field('education'); ?>
+
+							<?php the_field('interests'); ?>
+
+						</div>
 
 					</div>
 

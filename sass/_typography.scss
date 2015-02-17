@@ -8,8 +8,15 @@ body {
 h1 {
 	font: {
 		family: $plutoBold;
-		size: 60px;
+		size: 40px;
 		weight: 400;
+	}
+	@include media( large-screen ) {
+		font: {
+			family: $plutoBold;
+			size: 60px;
+			weight: 400;
+		}
 	}
 	letter-spacing: $five;
 	margin-bottom: $twentyfive;
@@ -46,8 +53,15 @@ h3 {
 h4 {
 	font: {
 		family: $plutoBold;
-		size: 25px;
+		size: 18px;
 		weight: 400;
+	}
+	@include media( $large-screen ) {
+		font: {
+			family: $plutoBold;
+			size: 25px;
+			weight: 400;
+		}
 	}
 	margin-bottom: $five;
 	text: {

@@ -100,7 +100,9 @@
 
 	<!-- // END Skills -->
 
-	<a href="/contact" class="contact-button">Let's Chat!</a>
+	<a href="mailto:gabrielamadeus@gmail.com" class="contact-button">Let's Chat!</a>
+
+	<div class="footer_pattern"></div>
 
 	<footer class="footer">
 
