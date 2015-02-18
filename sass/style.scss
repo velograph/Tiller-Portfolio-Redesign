@@ -104,15 +104,9 @@ body {
 							family: $plutoBold;
 							size: 14px;
 						}
-						@include media( $medium-screen ) {
-							font: {
-								family: $plutoBold;
-								size: 16px;
-							}
-						}
 						text-transform: uppercase;
 						&:hover {
-							text-decoration: underline;
+							color: $persimmon;
 						}
 					}
 				}
@@ -237,14 +231,15 @@ body {
 	}
 }
 
+h1.what-can-i-do {
+	background: $black;
+	color: $white;
+	padding: $fifty 0;
+}
+
 .skills-container {
 	@include outer-container;
 	@include media( $large-screen ) {
-		padding: $fifty 0;
-	}
-	h1 {
-		background: $black;
-		color: $white;
 		padding: $fifty 0;
 	}
 	.skill-row {
@@ -259,6 +254,7 @@ body {
 				text-align: left;
 			}
 			img {
+				margin-bottom: $ten;
 				max-width: 25%;
 				@include media( $large-screen ) {
 					max-width: 50%;
@@ -388,7 +384,6 @@ body {
 			z-index: 1;
 		}
 		.featured-image-container {
-			max-height: 600px;
 			overflow: hidden;
 			position: relative;
 			width: 100%;
@@ -416,6 +411,32 @@ body {
 				height: 100%;
 				opacity: 1;
 				width: 100%;
+			}
+		}
+	}
+}
+
+.case-study-archive {
+	@include outer-container;
+	.case-study {
+		@include row();
+		margin-bottom: $fifty;
+		.case-study-title {
+			margin-top: $fifty;
+			a {
+				color: $persimmon;
+				&:hover {
+					color: $green-dark;
+				}
+			}
+		}
+		@include media( $large-screen ) {
+			.featured-image-container {
+				@include span-columns(6);
+				@include shift(1);
+			}
+			.case-study-title {
+				@include span-columns(4);
 			}
 		}
 	}
