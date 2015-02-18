@@ -71,10 +71,9 @@
 	?>
 
 	<?php if( $wp_query->have_posts() ) : ?>
+		<h1 class="what-can-i-do">What can I do for you?</h1>
 
 		<section class="skills-container">
-
-			<h1>What can I do for you?</h1>
 
 			<div class="skill-row">
 
