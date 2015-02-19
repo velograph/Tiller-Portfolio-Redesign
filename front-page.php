@@ -20,7 +20,7 @@ $(function() {
 				var target = $(this.hash);
 						target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 						if (target.length) {
-								$('html,body').animate({ scrollTop: target.offset().top -0 }, 1500);
+								$('html,body').animate({ scrollTop: target.offset().top -30 }, 1500);
 				return false;
 				}
 			}

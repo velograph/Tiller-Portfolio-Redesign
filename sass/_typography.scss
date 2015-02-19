@@ -31,13 +31,14 @@ h2 {
 		size: 24px;
 		weight: 400;
 	}
-	text: {
-		transform: uppercase;
-	}
 	@include media( $large-screen ) {
 		font: {
 			size: 36px;
 		}
+	}
+	letter-spacing: 2px;
+	text: {
+		transform: uppercase;
 	}
 }
 
@@ -63,6 +64,7 @@ h4 {
 			weight: 400;
 		}
 	}
+	letter-spacing: 2px;
 	margin-bottom: $five;
 	text: {
 		transform: uppercase;

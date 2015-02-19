@@ -21,7 +21,7 @@ get_header(); ?>
 			<article class="about-gabe">
 
 				<div class="entry-content">
-					<h4>&mdash;&nbsp;Who?&nbsp;&mdash;</h4>
+					<span>&mdash;&nbsp;Who?&nbsp;&mdash;</span>
 					<h1>Hi.</h1>
 					<?php the_content(); ?>
 				</div>

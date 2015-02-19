@@ -104,6 +104,7 @@ body {
 							family: $plutoBold;
 							size: 14px;
 						}
+						letter-spacing: 2px;
 						text-transform: uppercase;
 						&:hover {
 							color: $persimmon;
@@ -116,6 +117,7 @@ body {
 }
 
 .logo-container {
+	@include outer-container;
 	z-index: 9;
 	.logo {
 		a {
@@ -131,10 +133,8 @@ body {
 		position: relative;
 		top: $fifty;
 		.logo-container {
-			position: relative;
-			width: 1280px;
 			.logo {
-				left: -1px;
+				left: 100px;
 				position: absolute;
 				width: 250px;
 				a {
@@ -144,7 +144,16 @@ body {
 		}
 		&.is-sticky {
 			.logo-container {
-				width: 1280px !important;
+				@include outer-container;
+				.logo {
+					left: 100px;
+					position: absolute;
+					top: 2px;
+					width: 250px;
+					a {
+						padding-top: $twentyfive;
+					}
+				}
 			}
 		}
 	}
@@ -195,6 +204,8 @@ body {
 			@include row();
 			margin-bottom: $fifteen;
 			p {
+				font-size: 1.5em;
+				line-height: 1.55em;
 				text-align: left;
 				@include media( $large-screen ) {
 					text-align: center;
@@ -234,6 +245,7 @@ body {
 h1.what-can-i-do {
 	background: $black;
 	color: $white;
+	margin-bottom: 0;
 	padding: $fifty 0;
 }
 
@@ -245,7 +257,7 @@ h1.what-can-i-do {
 	.skill-row {
 		@include row();
 		.skill {
-			@include pad($twentyfive);
+			@include pad( 0 $twentyfive $twentyfive $twentyfive );
 			@include media( $large-screen ) {
 				@include span-columns(3);
 			}
@@ -254,7 +266,7 @@ h1.what-can-i-do {
 				text-align: left;
 			}
 			img {
-				margin-bottom: $ten;
+				margin-bottom: $fifty;
 				max-width: 25%;
 				@include media( $large-screen ) {
 					max-width: 50%;
@@ -324,6 +336,10 @@ h1.what-can-i-do {
 			@include media( $medium-screen ) {
 				@include span-columns(8);
 				@include shift(2);
+				p {
+					font-size: 1.5em;
+					line-height: 1.55em;
+				}
 				a {
 					color: $white;
 					&:hover {
@@ -347,7 +363,7 @@ h1.what-can-i-do {
 		.experience-row {
 			@include row();
 			.experience{
-				@include pad($fifty);
+				@include pad($twentyfive);
 				@include media( $large-screen ) {
 					@include span-columns(3);
 				}
@@ -424,9 +440,9 @@ h1.what-can-i-do {
 		.case-study-title {
 			margin-top: $fifty;
 			a {
-				color: $persimmon;
+				color: $black;
 				&:hover {
-					color: $green-dark;
+					color: $persimmon;
 				}
 			}
 		}
@@ -467,6 +483,10 @@ h1.what-can-i-do {
 		.case-study-content {
 			@include span-columns(8);
 			@include shift(2);
+			p {
+				font-size: 1.5em;
+				line-height: 1.55em;
+			}
 		}
 		.post-categories {
 			display: inline-block;
