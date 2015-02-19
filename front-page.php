@@ -41,8 +41,6 @@ $(function() {
 					<?php echo $the_content; ?>
 				</div>
 
-				<h3><a href="mailto:gabrielamadeus@gmail.com">Let's Chat!</a></h3>
-
 				<h4><a class="jump-to-content" href="#case-study-list">See Work</a></h4>
 
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
