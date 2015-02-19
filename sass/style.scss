@@ -32,7 +32,7 @@
 }
 
 body {
-	border: $fifteen solid $black;
+	border: $twentyfive solid $black;
 	border-top: 0;
 	margin: 0;
 	padding: 0;
@@ -492,4 +492,13 @@ h1.what-can-i-do {
 			display: inline-block;
 		}
 	}
+}
+
+.body-bottom-border {
+	background: $black;
+	bottom: 0;
+	display: block;
+	height: $twentyfive;
+	position: fixed;
+	width: 100%;
 }

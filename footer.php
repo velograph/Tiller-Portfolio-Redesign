@@ -166,6 +166,8 @@
 
 </div><!-- #page -->
 
+<div class="body-bottom-border"></div>
+
 <?php wp_footer(); ?>
 
 </body>
