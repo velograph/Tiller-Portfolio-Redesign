@@ -13,6 +13,7 @@ get_header(); ?>
 			jQuery('.gallery').slick({
 				arrows: true,
 				dots: true,
+				accessibility: true,
 				mobileFirst: true,
 				variableWidth: false,
 			});
