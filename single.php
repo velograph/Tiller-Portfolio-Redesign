@@ -15,9 +15,11 @@ get_header(); ?>
 				dots: true,
 				accessibility: true,
 				mobileFirst: true,
+				lazyLoad: 'ondemand',
 				variableWidth: false,
 			});
 		});
+
 	});
 	</script>
 

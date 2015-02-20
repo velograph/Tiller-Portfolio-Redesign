@@ -18,6 +18,8 @@ get_header(); ?>
 
 			<?php the_title(); ?>
 
+			<?php the_content(); ?>
+
 		<?php endwhile; // end of the loop. ?>
 
 	</div><!-- #primary -->
