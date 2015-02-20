@@ -557,11 +557,10 @@ h1.what-can-i-do {
 		.wpcf7-form {
 			@include span-columns(6);
 			@include shift(3);
-			@include pad( $twentyfive );
-			background: $persimmon;
-			margin-bottom: $fifty;
-			input[type="submit"] {
-				margin-bottom: 0;
+			.inner-form {
+				background: $persimmon;
+				margin-bottom: $fifty;
+				@include pad( $twentyfive );
 			}
 			.ajax-loader {
 				display: none;
