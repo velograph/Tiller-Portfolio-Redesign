@@ -32,8 +32,10 @@
 }
 
 body {
-	border: $twentyfive solid $black;
-	border-top: 0;
+	@include media( $large-screen ) {
+		border: $twentyfive solid $black;
+		border-top: 0;
+	}
 	margin: 0;
 	padding: 0;
 	position: relative;
@@ -207,16 +209,11 @@ input.wpcf7-submit,
 		@include media( $large-screen ) {
 			@include span-columns(6);
 			@include shift(3);
-			padding: ($fifty * 2) 0 ($fifty);
+			padding: $fifty 0;
 		}
-		h3 {
+		h3, h4 {
 			a {
 				color: $black;
-			}
-		}
-		h4 {
-			a {
-				color: $seafoam-light;
 			}
 		}
 		.the-content {
@@ -249,7 +246,9 @@ input.wpcf7-submit,
 		margin-bottom: $twentyfive;
 		p {
 			display: inline;
+			font-size: 1.5em;
 			font-style: italic;
+			line-height: 1.55em;
 		}
 		svg {
 			display: inline;
@@ -287,7 +286,7 @@ h1.what-can-i-do {
 			}
 			img {
 				margin-bottom: $fifty;
-				max-width: 25%;
+				max-width: 35%;
 				@include media( $large-screen ) {
 					max-width: 50%;
 				}
@@ -352,7 +351,7 @@ h1.what-can-i-do {
 		@include row();
 		color: $white;
 		background: $seafoam-dark;
-		padding: $fifty 0;
+		padding: $fifty $fifteen;
 		.entry-content {
 			a {
 				color: $white;
@@ -390,6 +389,7 @@ h1.what-can-i-do {
 				}
 				h3 {
 					color: $persimmon;
+					margin-bottom: $five;
 				}
 				ul {
 					margin-bottom: .75em;
@@ -397,7 +397,13 @@ h1.what-can-i-do {
 				&:last-of-type {
 					background: $persimmon;
 					color: $white;
-					padding: $fifteen;
+					padding: $twentyfive $fifteen;
+					@include media( $large-screen ) {
+						padding: $fifteen;
+					}
+					h4 {
+						margin-top: $fifteen;
+					}
 				}
 			}
 		}
@@ -458,12 +464,17 @@ h1.what-can-i-do {
 	@include outer-container;
 	.case-study {
 		@include row();
+		@include media( $large-screen ) {
+			background: $seafoam-dark;
+		}
 		margin-bottom: $fifty;
+		.post-categories {
+			display: inline-block;
+		}
 		.case-study-title {
-			@include media( $medium-screen ) {
-				margin-left: $twentyfive;
-			}
+			color: $mustard;
 			margin-top: $fifty;
+			@include pad( 0 $fifteen );
 			a {
 				color: $black;
 				&:hover {
@@ -474,10 +485,22 @@ h1.what-can-i-do {
 		@include media( $large-screen ) {
 			.featured-image-container {
 				@include span-columns(6);
-				@include shift(1);
+				img {
+					float: left;
+				}
 			}
-			.case-study-title {
-				@include span-columns(4);
+			.case-study-title-container {
+				@include span-columns(6);
+				padding: 0;
+				.case-study-title {
+					margin-right: 5.35765%;
+					a {
+						color: $mustard;
+						&:hover {
+							color: $white;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -519,27 +542,38 @@ h1.what-can-i-do {
 	}
 }
 
-.body-bottom-border {
-	background: $black;
-	bottom: 0;
-	display: block;
-	height: $twentyfive;
-	position: fixed;
-	width: 100%;
+@include media( $large-screen ) {
+	.body-bottom-border {
+		background: $black;
+		bottom: 0;
+		display: block;
+		height: $twentyfive;
+		position: fixed;
+		width: 100%;
+	}
 }
 
-
+.page-template-about-php,
 .page-template-contact-php {
 	.pattern {
 		margin-bottom: 0;
 	}
-	.site-content {
-		img {
+}
+
+.page-template-contact-php {
+	.tin-can-phone {
+		svg {
 			float: left;
+			width: 100%;
 		}
 	}
 	p {
-		margin: 0;
+		font-size: 1.5em;
+		line-height: 1.55em;
+		margin: 0 0 $fifteen;
+	}
+	a:hover {
+		color: $seafoam;
 	}
 	h1 {
 		background: $black;
@@ -555,12 +589,21 @@ h1.what-can-i-do {
 	.wpcf7 {
 		@include row();
 		.wpcf7-form {
-			@include span-columns(6);
-			@include shift(3);
+			@include pad( $ten );
+			@include media( $medium-screen ) {
+				@include span-columns(6);
+				@include shift(3);
+			}
 			.inner-form {
 				background: $persimmon;
 				margin-bottom: $fifty;
 				@include pad( $twentyfive );
+			}
+			.wpcf7-submit {
+				&:hover {
+					background: $seafoam-dark;
+					color: $seafoam;
+				}
 			}
 			.ajax-loader {
 				display: none;

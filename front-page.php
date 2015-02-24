@@ -58,6 +58,7 @@ $(function() {
 			$args = array(
 				'post_type' => 'post',
 				'posts_per_page' => 5,
+				'ignore_sticky_posts' => 1,
 			);
 			$query = new WP_Query($args);
 
@@ -85,17 +86,15 @@ $(function() {
 								<?php $small_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-mobile' ); ?>
 								<?php $medium_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-tablet' ); ?>
 								<?php $large_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-desktop' ); ?>
-								<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-2x' ); ?>
-
-								<picture>
-									<!--[if IE 9]><video style="display: none;"><![endif]-->
-									<source srcset="<?php echo $small_image[0]; ?>" media="(max-width: 600px)">
-									<source srcset="<?php echo $medium_image[0]; ?>" media="(min-width: 601px)">
-									<source srcset="<?php echo $large_image[0]; ?>" media="(min-width: 801px)">
-									<source srcset="<?php echo $retina[0]; ?>" media="(min-device-pixel-ratio: 2)">
-									<!--[if IE 9]></video><![endif]-->
-									<img srcset="<?php echo $large_image[0]; ?>">
-								</picture>
+								
+								<img
+									alt=""
+									data-sizes="auto"
+									src="<?php echo $small_image[0]; ?>"
+									data-srcset="<?php echo $small_image[0]; ?> 600w,
+									<?php echo $medium_image[0]; ?> 640w,
+									<?php echo $large_image[0]; ?> 1024w"
+									class="lazyload" />
 
 							</div>
 						</a>

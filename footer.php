@@ -99,7 +99,13 @@
 
 	<!-- // END Skills -->
 
-	<a href="/contact" class="contact-button">Let's Chat!</a>
+	<?php if( is_page('lets-chat') ) : ?>
+
+	<?php else : ?>
+
+		<a href="/lets-chat" class="contact-button">Let's Chat!</a>
+
+	<?php endif; ?>
 
 	<div class="footer_pattern"></div>
 

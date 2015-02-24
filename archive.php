@@ -9,70 +9,73 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
+	<div id="primary" class="content-area">
 
-	<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
 
-		<section id="case-study-archive" class="case-study-archive">
+			<section id="case-study-archive" class="case-study-archive">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-				<div class="lazyload case-study">
-
-					<a href="<?php the_permalink(); ?>">
+					<div class="lazyload case-study">
 
 						<div class="featured-image-container">
 
-							<div class="hover-border" style="border-color:<?php the_field('border_color'); ?>"></div>
+							<a href="<?php the_permalink(); ?>">
 
-							<?php $small_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-mobile' ); ?>
-							<?php $medium_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-tablet' ); ?>
-							<?php $large_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-desktop' ); ?>
-							<?php $retina = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-2x' ); ?>
+								<div class="hover-border" style="border-color:<?php the_field('border_color'); ?>"></div>
 
-							<picture>
-								<!--[if IE 9]><video style="display: none;"><![endif]-->
-								<source srcset="<?php echo $small_image[0]; ?>" media="(max-width: 600px)">
-								<source srcset="<?php echo $medium_image[0]; ?>" media="(min-width: 601px)">
-								<source srcset="<?php echo $large_image[0]; ?>" media="(min-width: 801px)">
-								<source srcset="<?php echo $retina[0]; ?>" media="(min-device-pixel-ratio: 2)">
-								<!--[if IE 9]></video><![endif]-->
-								<img srcset="<?php echo $large_image[0]; ?>">
-							</picture>
+								<?php $small_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'case-study-mobile' ); ?>
+								<?php $medium_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'case-study-tablet' ); ?>
+								<?php $large_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'case-study-desktop' ); ?>
+
+								<img
+									alt=""
+									data-sizes="auto"
+									src="<?php echo $small_image[0]; ?>"
+									data-srcset="<?php echo $small_image[0]; ?> 600w,
+									<?php echo $medium_image[0]; ?> 640w,
+									<?php echo $large_image[0]; ?> 1024w"
+									class="lazyload" />
+
+							</a>
 
 						</div>
-					</a>
 
-					<div class="case-study-title">
-						<a href="<?php the_permalink(); ?>">
-							<span>&mdash;&nbsp;Case Study&nbsp;&mdash;</span>
-							<h2><?php the_title(); ?></h2>
-						</a>
+						<div class="case-study-title-container">
+
+							<div class="case-study-title">
+								<span>&mdash;&nbsp;<?php the_category('&mdash;'); ?>&nbsp;&mdash;</span>
+								<a href="<?php the_permalink(); ?>">
+									<h2><?php the_title(); ?></h2>
+								</a>
+							</div>
+
+						</div>
+
 					</div>
 
-				</div>
+				<?php endwhile; ?>
 
-			<?php endwhile; ?>
+			</section>
 
-		</section>
+			<?php scratch_paging_nav(); ?>
 
-		<?php scratch_paging_nav(); ?>
+		<?php endif; ?>
 
-	<?php endif; ?>
+		<?php
+			global $wp_query;
 
-	<?php
-		global $wp_query;
+			$big = 999999999; // need an unlikely integer
 
-		$big = 999999999; // need an unlikely integer
+			echo paginate_links( array(
+				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $wp_query->max_num_pages
+			) );
+		?>
 
-		echo paginate_links( array(
-			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format' => '?paged=%#%',
-			'current' => max( 1, get_query_var('paged') ),
-			'total' => $wp_query->max_num_pages
-		) );
-	?>
-
-</div><!-- #primary -->
+	</div><!-- #primary -->
 
 <?php get_footer(); ?>

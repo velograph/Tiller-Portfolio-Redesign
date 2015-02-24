@@ -213,7 +213,12 @@ function what_can_i_do() {
 // Hook into the 'init' action
 add_action( 'init', 'what_can_i_do', 0 );
 
-add_image_size( 'full-width-hero-2x', 5000, 2500, true);
-add_image_size( 'full-width-hero-desktop', 2500, 1250, true);
-add_image_size( 'full-width-hero-tablet', 1250, 625, true);
+add_image_size( 'full-width-hero-2x', 5000, 1500, true);
+add_image_size( 'full-width-hero-desktop', 2500, 650, true);
+add_image_size( 'full-width-hero-tablet', 1250, 325, true);
 add_image_size( 'full-width-hero-mobile', 625, 313, true);
+
+add_image_size( 'case-study-2x', 5000, 2500, true);
+add_image_size( 'case-study-desktop', 2500, 1250, true);
+add_image_size( 'case-study-tablet', 1250, 625, true);
+add_image_size( 'case-study-mobile', 625, 313, true);

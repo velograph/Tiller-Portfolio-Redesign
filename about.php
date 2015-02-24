@@ -36,9 +36,9 @@ get_header(); ?>
 
 						<div class="experience">
 
-							<h3><?php the_field('first_position_title'); ?>
-							<?php the_field('first_position_company'); ?>
-							<?php the_field('first_position_date'); ?></h3>
+							<h3><?php the_field('first_position_title'); ?></h3>
+							<h3><?php the_field('first_position_company'); ?></h3>
+							<h3><?php the_field('first_position_date'); ?></h3>
 
 							<?php the_field('first_position_summary'); ?>
 
@@ -46,9 +46,9 @@ get_header(); ?>
 
 						<div class="experience">
 
-							<h3><?php the_field('second_position_title'); ?>
-							<?php the_field('second_position_company'); ?>
-							<?php the_field('second_position_date'); ?></h3>
+							<h3><?php the_field('second_position_title'); ?></h3>
+							<h3><?php the_field('second_position_company'); ?></h3>
+							<h3><?php the_field('second_position_date'); ?></h3>
 
 							<?php the_field('second_position_summary'); ?>
 
@@ -56,9 +56,9 @@ get_header(); ?>
 
 						<div class="experience">
 
-							<h3><?php the_field('third_position_title'); ?>
-							<?php the_field('third_position_company'); ?>
-							<?php the_field('third_position_date'); ?></h3>
+							<h3><?php the_field('third_position_title'); ?></h3>
+							<h3><?php the_field('third_position_company'); ?></h3>
+							<h3><?php the_field('third_position_date'); ?></h3>
 
 							<?php the_field('third_position_summary'); ?>
 
