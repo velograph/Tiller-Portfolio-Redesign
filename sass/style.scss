@@ -464,10 +464,10 @@ h1.what-can-i-do {
 	@include outer-container;
 	.case-study {
 		@include row();
-		@include media( $large-screen ) {
-			background: $seafoam-dark;
-		}
 		margin-bottom: $fifty;
+		@include media( $large-screen ) {
+			background: $black;
+		}
 		.post-categories {
 			display: inline-block;
 		}
@@ -495,7 +495,7 @@ h1.what-can-i-do {
 				.case-study-title {
 					margin-right: 5.35765%;
 					a {
-						color: $mustard;
+						color: $white;
 						&:hover {
 							color: $white;
 						}

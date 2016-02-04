@@ -86,16 +86,22 @@ $(function() {
 								<?php $small_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-mobile' ); ?>
 								<?php $medium_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-tablet' ); ?>
 								<?php $large_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-hero-desktop' ); ?>
-								
-								<img
-									alt=""
-									data-sizes="auto"
-									src="<?php echo $small_image[0]; ?>"
-									data-srcset="<?php echo $small_image[0]; ?> 600w,
-									<?php echo $medium_image[0]; ?> 640w,
-									<?php echo $large_image[0]; ?> 1024w"
-									class="lazyload" />
 
+								<picture class="home-featured-image">
+									<!--[if IE 9]><video style="display: none"><![endif]-->
+									<source
+										srcset="<?php echo $small_image[0]; ?>"
+										media="(max-width: 500px)" />
+									<source
+										srcset="<?php echo $medium_image[0]; ?>"
+										media="(max-width: 860px)" />
+									<source
+										srcset="<?php echo $large_image[0]; ?>"
+										media="(max-width: 1180px)" />
+									<!--[if IE 9]></video><![endif]-->
+									<img class="lazyload" srcset="<?php echo $large_image[0]; ?>">
+								</picture>
+								
 							</div>
 						</a>
 
